@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The daily picture guessing game.">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Peeple</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<!-- Hi there! I'm curently looking for junior Web Dev / similar roles. Email me at Ross.w.stevenson@gmail.com ------------------>
+
+<body>
+    <!----------------- Heading Text ------------->
+    <h1>Peeple </h1>
+    <!----------------- Github Logo ------------->
+    <div class="github" onclick="location.href='https://github.com/Rossstevo/birdle';"></div>
+    <div class="icon-buttons">
+        <button class="how-to" id="how-to">
+            <i class="material-icons" style="font-size:29px;color:whitesmoke;">help</i>
+        </button>
+        <!-- <button class="darkmode" id="dark">
+                <i class="material-icons" style="font-size:29px;color:whitesmoke;">dark_mode</i>
+        </button> -->
+    </div>
+    
+
+
+
+
+
+
+
+    <!----------------- How to ------------->
+    <div id="instructions-modal" class="intstructions-modal">
+        <div class="instructions-modal-content">
+            <h3>How to play</h3>
+            <p>Look at the tile, then guess who you think it is </p>
+            <p>Skipped or incorrect attempts unlock more of the picture
+
+            </p>
+            <p>Answer in as few tries as possible and share your score!</p>
+            </p>
+            <p><strong>A new Peeple will be available each day</p></strong>
+            </p>
+            <button class="share close-instructions" id="got-it">close</button>
+
+        </div>
+    </div>
+
+    <!----------------- Main grid ------------------>
+    <div class="grid-container">
+        <div class="grid-box">
+            <div class="start-button-container">
+                <button class="start-button" id="start">START</button>
+        
+            </div>
+            <div class="square" id="square1"></div>
+            <div class="square" id="square2"></div>
+            <div class="square" id="square3"></div>
+            <div class="square" id="square4"></div>
+            <div class="square" id="square5"></div>
+            <div class="square" id="square6"></div>
+            <div class="square" id="square7"></div>
+            <div class="square" id="square8"></div>
+            <div class="square" id="square9"></div>
+            <div class="square" id="square10"></div>
+            <div class="square" id="square11"></div>
+            <div class="square" id="square12"></div>
+            <div class="square" id="square13"></div>
+            <div class="square" id="square14"></div>
+            <div class="square" id="square15"></div>
+            <div class="square" id="square16"></div>
+            <div class="square" id="square17"></div>
+            <div class="square" id="square18"></div>
+            <div class="square" id="square19"></div>
+            <div class="square" id="square20"></div>
+            <div class="square" id="square21"></div>
+            <div class="square" id="square22"></div>
+            <div class="square" id="square23"></div>
+            <div class="square" id="square24"></div>
+        </div>
+
+
+
+        <!----------------- Score square ------------------>
+        <div class="score-container">
+            <div id="one" class="score one"></div>
+            <div id="two" class="score two"></div>
+            <div id="three" class="score three"></div>
+            <div id="four" class="score four"></div>
+            <div id="five" class="score five"></div>
+        </div>
+
+        <!----------------- input and submit button ------------------>
+
+        <div class="input-container">
+            <input id="input" type="text" placeholder="Enter guess here" onfocus="value=''">
+            <div class="submit-button-container">
+                <!-- <button id="skip-button" class="skip">SKIP</button> -->
+                <button class="submit" id="button">SUBMIT/SKIP</button>
+                <!-- <button class = "submit clue" id="button">CLUE</button> -->
+            </div>
+            <!-- <button id = "shift">shift array</button> -->
+        </div>
+    </div>
+
+    <!----------------- Modal WIN content ------------------>
+    <div id="myModalWin" class="modalWin">
+
+        <!-- Modal content -->
+        <div class="modalWin-content">
+            <span id="cross" class="close">&times;</span>
+            <p>Bingo! It's
+                <span class="answer" id="answer"></span>
+            </p>
+
+            <p id="firstAttempt" class=firstAttempt>
+                <i class="material-icons" style="font-size:26px;color:white;">circle</i>
+                <i class="material-symbols-outlined" style="font-size:26px;">circle</i>
+                <i class="material-symbols-outlined" style="font-size:26px;">circle</i>
+                <i class="material-symbols-outlined" style="font-size:26px;">circle</i>
+                <i class="material-symbols-outlined" style="font-size:26px;">circle</i>
+            </p>
+            <p id="secondAttempt" class="secondAttempt">
+                <i class="material-icons" style="font-size:26px;color:white;">circle</i>
+                <i class="material-icons" style="font-size:26px;color:white;">circle</i>
+                <i class="material-symbols-outlined" style="font-size:26px;">circle</i>
+                <i class="material-symbols-outlined" style="font-size:26px;">circle</i>
+                <i class="material-symbols-outlined" style="font-size:26px;">circle</i>
+            </p>
+            <p id="thirdAttempt" class=thirdAttempt>
+                <i class="material-icons" style="font-size:26px;color:white;">circle</i>
+                <i class="material-icons" style="font-size:26px;color:white;">circle</i>
+                <i class="material-icons" style="font-size:26px;color:white;">circle</i>
+                <i class="material-symbols-outlined" style="font-size:26px;">circle</i>
+                <i class="material-symbols-outlined" style="font-size:26px;">circle</i>
+            </p>
+            <p id="fourthAttempt" class="fourthAttempt">
+                <i class="material-icons" style="font-size:26px;color:white;">circle</i>
+                <i class="material-icons" style="font-size:26px;color:white;">circle</i>
+                <i class="material-icons" style="font-size:26px;color:white;">circle</i>
+                <i class="material-icons" style="font-size:26px;color:white;">circle</i>
+                <i class="material-symbols-outlined" style="font-size:26px;">circle</i>
+            </p>
+            <p id="fifthAttempt" class="fifthAttempt">
+                <i class="material-icons" style="font-size:26px;color:white;">circle</i>
+                <i class="material-icons" style="font-size:26px;color:white;">circle</i>
+                <i class="material-icons" style="font-size:26px;color:white;">circle</i>
+                <i class="material-icons" style="font-size:26px;color:white;">circle</i>
+                <i class="material-icons" style="font-size:26px;color:white;">circle</i>
+            </p>
+
+            <!-- watsapp text  -->
+
+            </p>
+            <div class="box-answer"></div>
+            <div class="first" id="first"><a
+                    href="whatsapp://send?text= 👀 &#x1F7E9&#x2B1C&#x2B1C&#x2B1C&#x2B1C 1/5 I beat today's Peeple!     https://www.peeple.fun"
+                    data-action="share/whatsapp/share" target="_blank">
+                    <div class="share">Share</div>
+                </a>
+
+                <div>
+
+                    <a class="share twitter"
+                        href="https://twitter.com/intent/tweet?text=👀 &#x1F7E9&#x2B1C&#x2B1C&#x2B1C&#x2B1C 1/5  I beat today's Peeple!      https://www.peeple.fun">
+                        Share on Twitter</a>
+
+                </div>
+
+            </div>
+
+            <div class="second" id="second"><a
+                    href="whatsapp://send?text= 👀 &#x1F7E5&#x1F7E9&#x2B1C&#x2B1C&#x2B1C 2/5 I beat today's Peeple!       https://www.peeple.fun"
+                    data-action="share/whatsapp/share" target="_blank">
+                    <div class="share">Share</div>
+                </a>
+
+                <div>
+
+                    <a class="share twitter"
+                        href="https://twitter.com/intent/tweet?text=👀 &#x1F7E5  &#x1F7E9  &#x2B1C  &#x2B1C  &#x2B1C 2/5 I beat today's Peeple!      https://www.peeple.fun">
+                        Share on Twitter</a>
+
+                </div>
+
+            </div>
+
+            <div class="third" id="third"><a
+                    href="whatsapp://send?text= 👀 &#x1F7E5&#x1F7E5&#x1F7E9&#x2B1C&#x2B1C 3/5 I beat today's Peeple!       https://www.peeple.fun"
+                    data-action="share/whatsapp/share" target="_blank">
+                    <div class="share">Share</div>
+                </a>
+                <div>
+
+                    <a class="share twitter"
+                        href="https://twitter.com/intent/tweet?text=👀 &#x1F7E5  &#x1F7E5  &#x1F7E9  &#x2B1C  &#x2B1C 3/5 I beat today's Peeple!      https://www.peeple.fun">
+                        Share on Twitter</a>
+                </div>
+            </div>
+            <div class="fourth" id="fourth"><a
+                    href="whatsapp://send?text= 👀 &#x1F7E5&#x1F7E5&#x1F7E5&#x1F7E9&#x2B1C 4/5 I beat today's Peeple!       https://www.peeple.fun"
+                    data-action="share/whatsapp/share" target="_blank">
+                    <div class="share">Share</div>
+                </a>
+                <div>
+
+                    <a class="share twitter"
+                        href="https://twitter.com/intent/tweet?text=👀 &#x1F7E5  &#x1F7E5  &#x1F7E5  &#x1F7E9  &#x2B1C 4/5 I beat today's Peeple!      https://www.peeple.fun">
+                        Share on Twitter</a>
+                </div>
+
+            </div>
+
+            <div class="fifth" id="fifth"><a
+                    href="whatsapp://send?text= 👀 &#x1F7E5&#x1F7E5&#x1F7E5&#x1F7E5&#x1F7E9 5/5 I beat today's Peeple!      https://www.peeple.fun"
+                    data-action="share/whatsapp/share" target="_blank">
+                    <div class="share">Share</div>
+
+                </a>
+                <div>
+
+                    <a class="share twitter"
+                        href="https://twitter.com/intent/tweet?text=👀 &#x1F7E5  &#x1F7E5  &#x1F7E5  &#x1F7E5  &#x1F7E9  5/5 I beat today's Peeple!      https://www.peeple.fun">
+                        Share on Twitter</a>
+
+                </div>
+
+
+
+            </div>
+
+
+            <div class="timer-box">
+                <p class="try-again">Come back tomorrow for your next Peeple</p>
+                <!-- <p class="timer" id="timerWin"></p> -->
+
+            </div>
+
+        </div>
+
+
+
+
+
+    </div>
+    <!----------------- Modal FAIL content ------------------>
+    <div id="myModalFail" class="modalFail">
+
+        <!-- Modal content -->
+        <div class="modalFail-content">
+            <span id="crossFail" class="close">&times;</span>
+            <p>You ran out of lives! It's </p>
+            <h4 id="failAnswer"></h4>
+
+
+            <p><span class="answer" id="answer"></span></p>
+            <p id="failAttempt" class="failAttempt">
+                <i class="material-icons" style="font-size:26px;color:white;">circle</i>
+                <i class="material-icons" style="font-size:26px;color:white;">circle</i>
+                <i class="material-icons" style="font-size:26px;color:white;">circle</i>
+                <i class="material-icons" style="font-size:26px;color:white;">circle</i>
+                <i class="material-icons" style="font-size:26px;color:white;">circle</i>
+                
+            </p>
+            <div class="box-answer"></div>
+            <!-- <div class = "fail-test">
+                <href
+                    href="whatsapp://send?text= 👀 &#x1F7E5&#x1F7E5&#x1F7E5&#x1F7E5&#x1F7E5 Today's Peeple was too tough for me!       https://www.peeple.fun"
+                    data-action="share/whatsapp/share" target="_blank">
+                    <div class="share">Share</div> -->
+
+
+            <div class="fail-share" id="fail-share"><a
+                    href="whatsapp://send?text= 👀 &#x1F7E5&#x1F7E5&#x1F7E5&#x1F7E5&#x1F7E5 I was beaten by today's Peeple      https://www.peeple.fun"
+                    data-action="share/whatsapp/share" target="_blank">
+                    <div class="share">Share on Whatsapp</div>
+
+                </a> </div>
+
+
+            <div>
+
+                <a class="share twitter"
+                    href="https://twitter.com/intent/tweet?text=👀 &#x1F7E5  &#x1F7E5  &#x1F7E5  &#x1F7E5  &#x1F7E5 I was beaten by today's Peeple      https://www.peeple.fun">
+                    Share on Twitter</a>
+
+            </div>
+
+
+
+
+            <div class="timer-box">
+                <p class="try-again">Come back tomorrow for your next Peeple</p>
+                <p class="timer" id="timerFail">
+
+
+
+                </p>
+
+
+            </div>
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+        <script src="main.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</body>
+
+</html>
